@@ -4,9 +4,16 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/app/**/*.{jsx,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js"
   ],
+  darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        satoshi: ['Satoshi', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,5 +21,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin.cjs")],
 }

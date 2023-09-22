@@ -2,26 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+html,body {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+
+
+/* body{
+  background-color:#0f0e13;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+} */
+
+.glassmorphism {
+  @apply rounded-xl border border-gray-500 bg-slate-300 dark:border-gray-200 dark:bg-black/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+}
+
+.glassmorphism-2{
+  @apply rounded-xl border border-gray-600 dark:bg-black/20 bg-white/30 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+}
+
+.black_btn {
+  @apply rounded-full border border-black dark:border-white bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+}
+
+.outline_btn {
+  @apply rounded-full border border-black dark:border-white  bg-transparent py-1.5 px-5 text-black dark:text-white transition-all hover:bg-black  hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}
+
+/* .red_btn{
+  @apply bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded-full
+} */
+
+.red_btn{
+  @apply rounded-full border hover:border-transparent border-red-600 bg-transparent py-1.5 px-5 text-red-500 transition-all hover:bg-red-500 hover:text-white text-center text-sm font-inter flex items-center justify-center
+}
+
+/* Navbar  */
+
+.dropdown {
+  @apply absolute z-10 right-0 top-full mt-2 w-full p-5 rounded-lg  bg-slate-100 min-w-[210px] flex flex-col gap-2 justify-end items-end;
+}
+
+.dropdown_link {
+  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium dark:text-white;
+}
+
+/* Form Component */
+.form_textarea {
+  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm dark:text-white text-gray-500 border-2 dark:border-0;
+}
+
+.form_input {
+  @apply w-full flex rounded-lg mt-2 p-3 text-sm dark:text-white text-gray-500  border-2 dark:border-0;
+}
+
+.form_label{
+    @apply font-satoshi font-semibold text-base text-gray-700 dark:text-white;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* media query */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .listing-container {
+    margin-top: 10px;
+    padding: 0x;
+  }
+
+  .listing-container .owner-name{
+    font-size: smaller;
+  }
+  .listing-container-col2 {
+    border-left: none;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+
+  .listing-container-col2 {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    /* padding: 20px; */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
